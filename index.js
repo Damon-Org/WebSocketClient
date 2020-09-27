@@ -30,7 +30,7 @@ export default class WSCommunicator extends EventModule {
     _onAuthenticated(id) {
         this.emit('ready');
 
-        this.log.info('WS_CLIENT', `Authenticated and received ID: ${this.id}`);
+        this.log.info('WS_CLIENT', `Authenticated and received ID: ${id}`);
     }
 
     /**
