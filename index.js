@@ -71,7 +71,7 @@ export default class WSCommunicator extends EventModule {
 
         this._client.on('event', (...args) => this.emit('event', ...args));
 
-        this._client.on('authenticated', () => this._onAuthenticated());
+        this._client.on('authenticated', (id) => this._onAuthenticated(id));
         this._client.on('close', (closeCode) => this._onClose(closeCode));
         this._client.on('error', (error) => this._onError(error));
         this._client.on('message', (message) => this._onMessage(message));
