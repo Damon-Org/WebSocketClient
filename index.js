@@ -11,8 +11,7 @@ export default class WSCommunicator extends EventModule {
         super(main);
 
         this.register(WSCommunicator, {
-            name: 'wsClient',
-            scope: 'global'
+            name: 'wsClient'
         });
     }
 
@@ -66,7 +65,7 @@ export default class WSCommunicator extends EventModule {
         this.log.info('WS_CLIENT', 'Connected to WS Server.');
     }
 
-    setup() {
+    init() {
         this._client = new WSClient(this);
 
         this._client.on('event', (...args) => this.emit('event', ...args));
